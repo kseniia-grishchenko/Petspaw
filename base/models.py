@@ -13,10 +13,16 @@ class Breed(models.Model):
     bred_for = models.CharField(max_length=200, null=True, blank=True)
     breed_group = models.CharField(max_length=200, null=True, blank=True)
 
+    def __str__(self):
+        return self.name
+
 
 class Image(models.Model):
     url = models.CharField(max_length=200, null=True, blank=True)
     breed = models.ForeignKey(Breed, on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+        return self.url
 
 
 class Favourite(models.Model):
@@ -24,6 +30,9 @@ class Favourite(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     sub_id = models.CharField(max_length=200, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.image
 
     class Meta:
         unique_together = (('user', 'image'),)
@@ -46,6 +55,11 @@ class Vote(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     country_code = models.CharField(max_length=20, null=True, blank=True)
 
+    def __str__(self):
+        return self.image
+
     class Meta:
         unique_together = (('user', 'image'),)
         index_together = (('user', 'image'),)
+
+
