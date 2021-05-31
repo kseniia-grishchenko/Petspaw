@@ -2,7 +2,7 @@ import requests
 
 from django.core.management.base import BaseCommand
 
-from base.models import Breed, Image, Favourite, Vote
+from api.models import Breed, Image, Favourite, Vote
 
 
 class Command(BaseCommand):

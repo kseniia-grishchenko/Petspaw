@@ -32,7 +32,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('url', models.CharField(blank=True, max_length=200, null=True)),
-                ('breed', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='base.breed')),
+                ('breed', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='api.breed')),
             ],
         ),
         migrations.CreateModel(
@@ -43,7 +43,7 @@ class Migration(migrations.Migration):
                 ('sub_id', models.CharField(blank=True, max_length=200, null=True)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('country_code', models.CharField(blank=True, max_length=20, null=True)),
-                ('image', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='base.image')),
+                ('image', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='api.image')),
             ],
         ),
         migrations.CreateModel(
@@ -52,7 +52,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('sub_id', models.CharField(blank=True, max_length=200, null=True)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('image', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='base.image')),
+                ('image', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='api.image')),
             ],
         ),
     ]
